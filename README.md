@@ -30,4 +30,10 @@ Two way binding is a feature in react that allows us to bind the value of a form
 
 We can do two way binding in react by using the useState hook. The useState hook is a hook that allows us to create a state variable.
 
+//27/9/24
+
+# short circuiting of AND and OR.
+
+# Validation 
+
 

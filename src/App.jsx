@@ -30,18 +30,62 @@
 
 // Validtaion
 
-import React, {useState} from 'react'
+// import React, {useState} from 'react'
+
+// const App = () => {
+//   const [username,setUsername] = useState('');
+//   const [error,setError] = useState(false);
+
+//   return (
+//     <div className="w-full h-screen justify-center items-center">
+//       <form action="">
+//         <input type="text"  placeholder="username" name="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} onInput={(e)=>{username.length<5 ? setError(true) : setError(false)}}/>
+//         {error && <p>username must be of more than 5</p>}
+//         <input type="submit" placeholder="submit"/>
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// Form input types
+
+import React, { useState } from 'react'
 
 const App = () => {
-  const [username,setUsername] = useState('');
-  const [error,setError] = useState(false);
+  const [gender,setgender] = useState('');
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(gender);
+  }
   return (
-    <div className="w-full h-screen justify-center items-center">
-      <form action="">
-        <input type="text"  placeholder="username" name="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} onInput={(e)=>{username.length<5 ? setError(true) : setError(false)}}/>
-        {error && <p>username must be of more than 5</p>}
-        <input type="submit" placeholder="submit"/>
+    <div>
+      <h1>Choose gender</h1>
+      <form action="" onSubmit={submitHandler}>
+        <input 
+        type="radio"
+        name= "gender"
+        checked= {gender === "others" ? true : false}
+        defaultValue = "others"
+        onChange={(e)=> setgender(e.target.value)}
+         />
+         <input 
+        type="radio"
+        name= "gender"
+        checked= {gender === "male" ? true : false}
+        defaultValue = "male"
+        onChange={(e)=> setgender(e.target.value)}
+         />
+         <input 
+        type="radio"
+        name= "gender"
+        checked= {gender === "female" ? true : false}
+        defaultValue = "female"
+        onChange={(e)=> setgender(e.target.value)}
+         />
+         <input type="submit" />
       </form>
     </div>
   )

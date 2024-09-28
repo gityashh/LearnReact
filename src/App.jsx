@@ -58,7 +58,7 @@ const App = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(gender);
+
   }
   return (
     <div>

@@ -35,5 +35,6 @@ We can do two way binding in react by using the useState hook. The useState hook
 # short circuiting of AND and OR.
 
 # Validation 
+//
 
 

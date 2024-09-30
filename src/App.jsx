@@ -51,44 +51,55 @@
 
 // Form input types
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   const [gender,setgender] = useState('');
+
+//   const submitHandler = (e) => {
+//     e.preventDefault();
+//     console.log(gender);
+//   }
+//   return (
+//     <div>
+//       <h1>Choose gender</h1>
+//       <form action="" onSubmit={submitHandler}>
+//         <input 
+//         type="radio"
+//         name= "gender"
+//         checked= {gender === "others" ? true : false}
+//         defaultValue = "others"
+//         onChange={(e)=> setgender(e.target.value)}
+//          />
+//          <input 
+//         type="radio"
+//         name= "gender"
+//         checked= {gender === "male" ? true : false}
+//         defaultValue = "male"
+//         onChange={(e)=> setgender(e.target.value)}
+//          />
+//          <input 
+//         type="radio"
+//         name= "gender"
+//         checked= {gender === "female" ? true : false}
+//         defaultValue = "female"
+//         onChange={(e)=> setgender(e.target.value)}
+//          />
+//          <input type="submit" />
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App
+
+import React from 'react'
 
 const App = () => {
-  const [gender,setgender] = useState('');
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-  }
   return (
-    <div>
-      <h1>Choose gender</h1>
-      <form action="" onSubmit={submitHandler}>
-        <input 
-        type="radio"
-        name= "gender"
-        checked= {gender === "others" ? true : false}
-        defaultValue = "others"
-        onChange={(e)=> setgender(e.target.value)}
-         />
-         <input 
-        type="radio"
-        name= "gender"
-        checked= {gender === "male" ? true : false}
-        defaultValue = "male"
-        onChange={(e)=> setgender(e.target.value)}
-         />
-         <input 
-        type="radio"
-        name= "gender"
-        checked= {gender === "female" ? true : false}
-        defaultValue = "female"
-        onChange={(e)=> setgender(e.target.value)}
-         />
-         <input type="submit" />
-      </form>
-    </div>
+    <div>App</div>
   )
 }
 
 export default App
+

@@ -94,10 +94,38 @@
 // export default App
 
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 const App = () => {
+  const {
+    watch,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const submitHandler = (data) => {
+    console.log(data);
+  }
+
+  console.log(watch("username"));
+
+  console.log(errors.username);
+
+
   return (
-    <div>App</div>
+    <div>
+      <form action="" onSubmit={handleSubmit(submitHandler)}>
+        <input 
+          type="text" 
+          className='px-4 py-2' 
+          placeholder='username' 
+          {...register("username", { required: "Username is required", maxLength: { value: 10, message: "Max length is 10" } })}
+        />
+        {errors.username && <p>{errors.username.message}</p>}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   )
 }
 

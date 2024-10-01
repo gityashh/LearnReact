@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+  .input-field:focus {
+    color: #000000; /* text-black */
+  }
+  
+  .input-field:not(:placeholder-shown) {
+    color: #000000; /* text-black */
+  }

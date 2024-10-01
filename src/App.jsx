@@ -1,133 +1,30 @@
-// Two way Binding
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
-// import React, { useState } from 'react'
-
-// const App = () => {
-
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log({
-//       username,
-//       password
-//     });
-//   }
-
-//   return (
-//     <div className='flex flex-col items-center justify-center h-screen'>
-//       <form className='flex flex-col gap-4' action="" onSubmit={handleSubmit}>
-//       <input className='border-2 border-gray-300 rounded-md p-2' type="text" name="username" placeholder="Username" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
-//       <input className='border-2 border-gray-300 rounded-md p-2' type="password" name="password" placeholder="Password" value={password} onChange={(e)=>{setPassword(e.target.value)}}  />
-//       <button className='bg-blue-500 text-white p-2 rounded-md' type="submit">Submit</button>
-//     </form>
-//     </div>
-//   )
-// }
-
-// export default App;
-
-// Validtaion
-
-// import React, {useState} from 'react'
-
-// const App = () => {
-//   const [username,setUsername] = useState('');
-//   const [error,setError] = useState(false);
-
-//   return (
-//     <div className="w-full h-screen justify-center items-center">
-//       <form action="">
-//         <input type="text"  placeholder="username" name="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} onInput={(e)=>{username.length<5 ? setError(true) : setError(false)}}/>
-//         {error && <p>username must be of more than 5</p>}
-//         <input type="submit" placeholder="submit"/>
-//       </form>
-//     </div>
-//   )
-// }
-
-// export default App
-
-// Form input types
-
-// import React, { useState } from 'react'
-
-// const App = () => {
-//   const [gender,setgender] = useState('');
-
-//   const submitHandler = (e) => {
-//     e.preventDefault();
-//     console.log(gender);
-//   }
-//   return (
-//     <div>
-//       <h1>Choose gender</h1>
-//       <form action="" onSubmit={submitHandler}>
-//         <input 
-//         type="radio"
-//         name= "gender"
-//         checked= {gender === "others" ? true : false}
-//         defaultValue = "others"
-//         onChange={(e)=> setgender(e.target.value)}
-//          />
-//          <input 
-//         type="radio"
-//         name= "gender"
-//         checked= {gender === "male" ? true : false}
-//         defaultValue = "male"
-//         onChange={(e)=> setgender(e.target.value)}
-//          />
-//          <input 
-//         type="radio"
-//         name= "gender"
-//         checked= {gender === "female" ? true : false}
-//         defaultValue = "female"
-//         onChange={(e)=> setgender(e.target.value)}
-//          />
-//          <input type="submit" />
-//       </form>
-//     </div>
-//   )
-// }
-
-// export default App
-
-import React from 'react'
-import { useForm } from 'react-hook-form'
 
 const App = () => {
-  const {
-    watch,
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const submitHandler = (data) => {
-    console.log(data);
-  }
-
-  console.log(watch("username"));
-
-  console.log(errors.username);
-
-
+  const { register,
+    handleSubmit
+   } = useForm();
   return (
-    <div>
-      <form action="" onSubmit={handleSubmit(submitHandler)}>
-        <input 
-          type="text" 
-          className='px-4 py-2' 
-          placeholder='username' 
-          {...register("username", { required: "Username is required", maxLength: { value: 10, message: "Max length is 10" } })}
+    <div className="h-screen w-full flex items-center justify-center bg-zinc-100 flex-col">
+      <form action="" className="flex flex-col gap-2 items-start">
+        <input
+          type="text"
+          placeholder="username"
+          className="input-field font-thin px-3 py-1 border border-black-300 outline-none tracking-widest text-zinc-500 rounded-md"
         />
-        {errors.username && <p>{errors.username.message}</p>}
-        <button type="submit">Submit</button>
+        <input
+          type="text"
+          placeholder="password"
+          className="input-field font-thin px-3 py-1 border border-black-300  outline-none tracking-widest text-zinc-500 rounded-md"
+        />
+        <button className="px-3 py-1 rounded-md bg-teal-500 text-white">
+          Sign up
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;

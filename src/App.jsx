@@ -5,8 +5,8 @@ import Child2 from './components/Child2';
 const App = () => {
   return (
     <div>
-      <Child1 />
-      <Child2 />
+      <Child1 title="this is child 1" />
+      <Child2 title="this is child 2" />
     </div>
   );
 };

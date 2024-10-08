@@ -1,8 +1,16 @@
 import React from 'react'
 
-const Child1 = (props) => {
+//usual way of using props
+
+// const Child1 = (props) => {
+//   return (
+//       <div>{props.title}</div>
+//   )
+// }
+
+const Child1 = ({title}) => {
   return (
-      <div>{props.title}</div>
+      <div>{title}</div>
   )
 }
 

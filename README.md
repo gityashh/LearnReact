@@ -38,8 +38,12 @@ We can do two way binding in react by using the useState hook. The useState hook
 
 //30/9/24
 
-# fileupload
-
 # useForm
 
+useForm is a hook that allows us to create a form and validate the form.
 
+//1/10/24
+
+# props
+
+props are arguments passed into React components.

@@ -7,16 +7,9 @@ import List from "./components/List"
 
 const App = () => {
   return (
-    <Container>
-      <Nav />
-      <div>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/list' element={<List />} />
-          <Route path='/list/:itemId' element={<Item />} />
-        </Routes>
-      </div>
-    </Container>
+    <div>
+      <h1>App</h1>
+    </div>
   )
 }
 

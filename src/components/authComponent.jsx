@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { login, logout } from '../store/Slices/authSlice';
+import { login, logout } from '../store/Actions/action';
 
 const Auth = () => {
   const [username, setUsername] = useState('');
@@ -23,23 +23,29 @@ const Auth = () => {
 
   if (isAuthenticated) {
     return (
-      <div>
-        <h2>Welcome, {user.username}!</h2>
-        <button onClick={handleLogout}>Logout</button>
+      <div className="flex gap-8 items-center mb-4 w-80 justify-between">
+        <h2 className="text-md font-thin">Welcome, {user.username}!</h2>
+        <button
+          className="bg-red-500 text-xs text-white px-4 py-1 rounded"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
       </div>
     );
   }
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+    <div className="w-80">
+      <h2 className="text-md font-thin mb-2">Login</h2>
+      <form onSubmit={handleLogin} className="flex flex-col gap-2">
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
           required
+          className="border-2 border-gray-300 rounded-md p-1"
         />
         <input
           type="password"
@@ -47,8 +53,9 @@ const Auth = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
+          className="border-2 border-gray-300 rounded-md p-1"
         />
-        <button type="submit">Login</button>
+        <button className="bg-green-500 text-white rounded-md p-1" type="submit">Login</button>
       </form>
     </div>
   );

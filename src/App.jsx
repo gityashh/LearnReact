@@ -3,6 +3,7 @@ import Products from './components/Products'
 import Create from './components/Create'
 import { Route, Router, Routes } from 'react-router-dom'
 import Nav from './components/Nav'
+import Update from './components/Update'
 
 const App = () => {
   return (
@@ -10,7 +11,8 @@ const App = () => {
       <Nav/>
         <Routes>
           <Route path='/' element={<Products />} />
-          <Route path='/create' element={<Create />} />
+        <Route path='/create' element={<Create />} />
+        <Route path='/update/:id' element={<Update />} />
       </Routes>
     </>
   )

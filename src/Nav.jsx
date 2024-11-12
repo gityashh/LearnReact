@@ -7,4 +7,4 @@ const Nav = (props) => {
   )
 }
 
-export default memo(Nav)
+export default (Nav)

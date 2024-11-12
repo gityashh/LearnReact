@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import Nav from './Nav';
 
 
@@ -14,10 +14,19 @@ const App = () => {
 
   // const memoizedBigFunc = useMemo(bigfunc, [count]);
 
+  const changedata = useCallback(
+    () => {
+      setfirst("changed nav data")
+    },
+    [],
+  )
+  
+
   return (
     <div>
       <Nav dets={first} />
-      <button onClick={()=>setfirst(`new data ${Math.random()}`)}>click</button>
+      <h1>{count}</h1>
+      <button onClick={() => setcount(count+1)}>click</button>
     </div>
 
   )
